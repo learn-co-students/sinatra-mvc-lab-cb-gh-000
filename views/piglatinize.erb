@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Pig Latanizer</title>
+        <title>PigLatinize</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -20,13 +20,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <h1>Pig Latinizer!</h1>
-        <form action="/piglatinize" method="POST">
-          <label for="user_phrase">Enter your phrase:</label> <br>
-          <textarea name="user_phrase" id="user_phrase" cols="30" rows="10"></textarea>
-          <br>
-          <input type="submit">
-        </form>
+        <p><%= @piglatinize_sentence %></p>
 
         <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
