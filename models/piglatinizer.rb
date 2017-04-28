@@ -1,21 +1,18 @@
 class PigLatinizer
 
   def piglatinize(word)
-    piglatinized_word = word.downcase
+    piglatinized_word = word
 
-    case piglatinized_word[0..2]
-    when "i"
-      piglatinized_word = word + "w"
-    when /thr/, /sch/, /spr/, /[^aeiou]qu/
+    case piglatinized_word.downcase[0..2]
+    when /thr/, /sch/, /spr/, /str/, /[^aeiou]qu/
       piglatinized_word << piglatinized_word[0..2]
       piglatinized_word = piglatinized_word[3..-1]
-    when /ch./, /qu./, /th./, /br./, /pl./, /pr./
+    when /ch./, /qu./, /th./, /br./, /pl./, /pr./, /sk./, /wh./
       piglatinized_word << piglatinized_word[0..1]
       piglatinized_word = piglatinized_word[2..-1]
-    when /[aeiou]../
-      piglatinized_word[0] = word[0]
+    when /^[aeiou]/
       piglatinized_word << "w"
-    when /[^aeiou]../
+    when /[^aeiou]/
       piglatinized_word << piglatinized_word[0]
       piglatinized_word = piglatinized_word[1..-1]
     end
